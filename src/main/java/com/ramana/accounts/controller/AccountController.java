@@ -16,7 +16,7 @@ public class AccountController {
     @Autowired
     private AccountRepository repository;
 
-    @GetMapping("/myAccount/{customer_id}")
+    @GetMapping("/my-account/{customer_id}")
     public ResponseEntity<Account> getAccountDetails(@PathVariable("customer_id") Long customer_id){
         LOGGER.info("Inside AccountController - getAccountDetails() - request{} ", customer_id);
         Account account = repository.findByCustomerId(customer_id);
